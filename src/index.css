@@ -61,6 +61,6 @@
   }
 
   .text-animate-primary {
-    @apply bg-gradient-to-r bg-clip-text text-transparent from-red-500 via-red-400 to-red-600 animate-text
+    @apply bg-gradient-to-r bg-clip-text text-transparent from-red-400 via-red-300 to-red-400 animate-text
   }
 }

@@ -16,7 +16,7 @@ import * as EmailValidator from 'email-validator';
 import {supabase} from '@/lib/supabase';
 import { BlogPage } from './pages/Blog';
 import { BlogPostPage } from './pages/BlogPost';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function LandingPage() {
   const [email, setEmail] = useState("");
@@ -120,7 +120,7 @@ function LandingPage() {
           <div className="flex justify-center mb-6">
             <IOSBadge />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent p-2">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight p-2 text-animate-primary">
             AI Support When<br />Every Second Counts
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
