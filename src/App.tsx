@@ -14,9 +14,11 @@ import { PricingCard } from "@/components/PricingCard";
 import { IOSBadge } from "@/components/IOSBadge";
 import * as EmailValidator from 'email-validator';
 import {supabase} from '@/lib/supabase';
+import { BlogPage } from './pages/Blog';
+import { BlogPostPage } from './pages/BlogPost';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-
-function App() {
+function LandingPage() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -313,6 +315,19 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+// Main App component with routing
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
+      </Routes>
+    </Router>
   );
 }
 
