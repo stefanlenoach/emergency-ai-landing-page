@@ -7,12 +7,10 @@ import {
   Zap,
   Server,
   Clock,
-  Github,
   Apple,
   Check,
 } from "lucide-react";
 import { PricingCard } from "@/components/PricingCard";
-import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { IOSBadge } from "@/components/IOSBadge";
 import * as EmailValidator from 'email-validator';
 import {supabase} from '@/lib/supabase';
@@ -21,17 +19,11 @@ import {supabase} from '@/lib/supabase';
 function App() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
 
-  const handleWaitlistSubmit = async (e) => {
+  const handleWaitlistSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      // Reset any previous error states
-      setError("");
-      setIsLoading(true);
-
       // Validate email format using email-validator
       if (!email) {
         throw new Error("Please enter an email address");
@@ -57,16 +49,12 @@ function App() {
       console.log('ERROR', error)
       throw new Error('Failed to register email. Please try again.');
     }
-
+    console.log('data', data)
       // If successful, update UI state
       setSubmitted(true);
       setEmail("");
-      setIsLoading(false);
 
     } catch (err) {
-      // Handle errors gracefully
-      setError(err.message);
-      setIsLoading(false);
       setSubmitted(false);
     }
   };
@@ -103,7 +91,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background/80 relative">
-      <AnimatedBackground />
 
       {/* Header */}
       <header className="border-b bg-background/95 sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60">

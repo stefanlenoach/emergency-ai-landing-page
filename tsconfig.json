@@ -9,18 +9,6 @@
     "noUnusedLocals": false,      // Disable error on unused local variables
     "noUnusedParameters": false,   // Disable error on unused parameters
     "skipLibCheck": true,
-    // Module resolution
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    // Error handling options
-    "strict": true,
-    "noImplicitAny": false,         // Fixes 'implicit any' errors
-    "strictNullChecks": false,
 
     "paths": {
       "@/*": ["./src/*"]
