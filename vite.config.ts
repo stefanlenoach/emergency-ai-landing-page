@@ -9,13 +9,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  server: {
-    proxy: {
-      '/blog': {
-        target: 'http://localhost:5173',
-        changeOrigin: true,
-        rewrite: (path) => path,
-      },
-    },
-  },
+
 });
