@@ -6,6 +6,9 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+    "noUnusedLocals": false,      // Disable error on unused local variables
+    "noUnusedParameters": false,   // Disable error on unused parameters
+    "@typescript-eslint/no-unused-vars": "off" ,
     "paths": {
       "@/*": ["./src/*"]
     }

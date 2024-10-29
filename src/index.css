@@ -27,7 +27,7 @@
     --ring: 0 84% 60%;
     --radius: 0.75rem;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -57,6 +57,10 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'JetBrains Mono', monospace;
+    /* font-family: 'JetBrains Mono', monospace; */
+  }
+
+  .text-animate-primary {
+    @apply bg-gradient-to-r bg-clip-text text-transparent from-red-500 via-red-400 to-red-600 animate-text
   }
 }

@@ -57,6 +57,16 @@ export default {
         },
       },
       keyframes: {
+        'text': {
+          '0%, 100%': {
+           'background-size':'200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+           'background-size':'200% 200%',
+            'background-position': 'right center'
+          }
+        },
         'accordion-down': {
           from: {
             height: '0',
@@ -77,6 +87,7 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'text':'text 7s ease infinite',
       },
     },
   },
